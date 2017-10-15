@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/Code/Projects/fixed-memory/examples/allocator/allocate_fixed.cpp
+iostream
+-
+../../src/Allocator.h
+/mnt/d/Code/Projects/fixed-memory/src/Allocator.h
+
+/mnt/d/Code/Projects/fixed-memory/src/Allocator.cpp
+Allocator.h
+/mnt/d/Code/Projects/fixed-memory/src/Allocator.h
+cstring
+-
+cmath
+-
+
+/mnt/d/Code/Projects/fixed-memory/src/Allocator.h
+cstdlib
+-
+cstdint
+-
+

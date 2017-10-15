@@ -7,7 +7,7 @@ Allocator::Allocator(size_t blockSize, size_t poolSize, Type allocationType, voi
         m_blockSize{blockSize < sizeof(Block *) ? sizeof(Block *) : blockSize},
         m_pHead{nullptr},
         m_pPool{nullptr},
-        m_poolSize{max(poolSize, blockSize)},
+        m_poolSize{0},
         m_poolTotalBlockCnt{0},
         m_poolCurrBlockCnt{0},
         m_totalBlockCount{0},
@@ -15,6 +15,8 @@ Allocator::Allocator(size_t blockSize, size_t poolSize, Type allocationType, voi
         m_deallocations{0} {
     // if pool size is provided, we will use pool instead of dynamic heap allocations
     if (m_poolSize) {
+        m_poolSize = max(m_blockSize, poolSize);
+
         // find the closest round number that describes the number of blocks
         m_poolTotalBlockCnt = (uint16_t) round(m_poolSize / (float) m_blockSize);
         m_poolCurrBlockCnt = m_poolTotalBlockCnt;
