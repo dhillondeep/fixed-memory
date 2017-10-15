@@ -1,6 +1,5 @@
 language: cpp
 compiler: g++
-dist: trusty
 
 before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
@@ -11,6 +10,7 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 
 script:
+  - cppcheck src && cppcheck examples/allocator
   - cd examples/allocator && mkdir build && cp CMakeLists.txt build && cd build && cmake CMakeLists.txt && make
   - valgrind --leak-check=full ./allocatorExample
   - cd ../ && rm -r build && cd ../../
