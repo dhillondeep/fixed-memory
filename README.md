@@ -9,6 +9,9 @@ If there is no more enough memory left in memory pool, it is expanded automatica
 This library aims to provide equivalent of `malloc` and `free` so another class named `Memory` is provided which will use Allocator and provide dynamic memory allocation.
 Using `Memory` there are no restriction on the size of memory blocks.
 
+This library is inspired by **David Lafreniere's xallocator** library
+https://www.codeproject.com/Articles/1084801/Replace-malloc-free-with-a-fast-fixed-block-memory
+
 ## Why Allocator and Memory
 This library is very useful when working with embedded systems where memory is limited and hence memory fragmentation can occur very easily.
 Heap cannot be used all the times if stability is a concern on a system. Using this library will eliminate safety issues while still having flexibility of dynamic allocation.
@@ -21,23 +24,23 @@ This is a fixed memory block solution where you user specifies the size of memor
 So whenever there is an allocation that is made, Allocator provides access to memory of block size. Examples of constructors are shown below:
 
 ```cpp
-// memory block size is provided so on ever allocation heap is used to satisfy
-// user's need and on de-allocation that memory is kept for recycling and not
+// memory block size is provided so on allocations heap is used to satisfy
+// user's needs and on de-allocation that memory is kept for recycling and not
 // returned back to the system
 Allocator allocator{9};
 ```
 
 ```cpp
 // memory block size is provided along with size of memory pool. Memory pool
-// of this size is created in the begining and the used later on for allocations.
-// If the pool runs out of memory, dynamic memory is used to expand it.
+// of this size is created in the begining and then used later on for allocations.
+// If the pool runs out of memory, dynamic memory is used to expand it
 Allocator allocator{9, 18};
 ```
 
 ```cpp
 // memory block size is provided along with user allocated memory pool. This pool
 // could be static or dynamic and is used for allocations. If the pool runs out of memory, 
-// dynamic memory is used to expand it.
+// dynamic memory is used to expand it
 char memory[18];    // static
 Allocator allocator{9, memory, 18, Allocator::STATIC};
 
