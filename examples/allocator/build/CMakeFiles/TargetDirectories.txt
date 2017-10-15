@@ -1,3 +1,0 @@
-/mnt/d/Code/Projects/fixed-memory/examples/allocator/build/CMakeFiles/edit_cache.dir
-/mnt/d/Code/Projects/fixed-memory/examples/allocator/build/CMakeFiles/rebuild_cache.dir
-/mnt/d/Code/Projects/fixed-memory/examples/allocator/build/CMakeFiles/allocateExample.dir

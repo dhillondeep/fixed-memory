@@ -7,7 +7,7 @@ Allocator::Allocator(size_t blockSize, size_t poolSize, Type allocationType, voi
         m_blockSize{blockSize < sizeof(Block *) ? sizeof(Block *) : blockSize},
         m_pHead{nullptr},
         m_pPool{nullptr},
-        m_poolSize{0},
+        m_poolSize{poolSize},
         m_poolTotalBlockCnt{0},
         m_poolCurrBlockCnt{0},
         m_totalBlockCount{0},

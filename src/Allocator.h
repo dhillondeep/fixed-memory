@@ -134,8 +134,6 @@ public:
      * @return number of memory blocks available in the pool
      */
     inline uint16_t GetNumPoolBlocksAvail(){
-        if (m_totalBlockCount >= m_poolTotalBlockCnt) return 0;
-
         return m_poolCurrBlockCnt;
     }
 

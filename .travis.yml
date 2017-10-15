@@ -13,4 +13,4 @@ install:
 script:
   - cd examples/allocator && mkdir build && cp CMakeLists.txt build && cd build && cmake CMakeLists.txt && make
   - valgrind --leak-check=full ./allocatorExample
-  - cd ../ && rm -r build
+  - cd ../ && rm -r build && cd ../../

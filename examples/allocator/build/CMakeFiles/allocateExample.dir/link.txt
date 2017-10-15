@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/allocateExample.dir/mnt/d/Code/Projects/fixed-memory/examples/allocator/allocate_fixed.cpp.o CMakeFiles/allocateExample.dir/mnt/d/Code/Projects/fixed-memory/src/Allocator.cpp.o  -o allocateExample 
