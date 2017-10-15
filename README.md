@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dhillondeep/fixed-memory.svg?branch=master)](https://travis-ci.org/dhillondeep/fixed-memory)
+
 # Overview
 
 Fixed memory is a memory management library that takes care of memory fragmentation and allows for allocations to be safer and faster.
