@@ -200,7 +200,7 @@ private:
     }
 
     const Type m_poolType;
-    const size_t m_blockSize;
+    size_t m_blockSize;
     size_t m_poolSize;
     uint16_t m_poolTotalBlockCnt;
     uint16_t m_poolCurrBlockCnt;

@@ -4,7 +4,7 @@
 
 Allocator::Allocator(size_t blockSize, size_t poolSize, Type allocationType, void *pPool) :
         m_poolType{allocationType},
-        m_blockSize{blockSize < sizeof(Block *) ? sizeof(Block *) : blockSize},
+        m_blockSize{blockSize},
         m_pHead{nullptr},
         m_pPool{nullptr},
         m_poolSize{poolSize},
@@ -13,6 +13,9 @@ Allocator::Allocator(size_t blockSize, size_t poolSize, Type allocationType, voi
         m_totalBlockCount{0},
         m_allocations{0},
         m_deallocations{0} {
+    // lowest size of a block will be the size of Block ptr
+    if (m_blockSize < sizeof(Block*)) m_blockSize = sizeof(Block*);
+
     // if pool size is provided, we will use pool instead of dynamic heap allocations
     if (m_poolSize) {
         m_poolSize = max(m_blockSize, poolSize);
