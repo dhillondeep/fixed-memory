@@ -9,8 +9,8 @@ If there is no more enough memory left in memory pool, it is expanded automatica
 This library aims to provide equivalent of `malloc` and `free` so another class named `Memory` is provided which will use Allocator and provide dynamic memory allocation.
 Using `Memory` there are no restriction on the size of memory blocks.
 
-This library is inspired by **David Lafreniere's xallocator** library
-https://www.codeproject.com/Articles/1084801/Replace-malloc-free-with-a-fast-fixed-block-memory
+This library is inspired by **David Lafreniere's [xallocator] (https://www.codeproject.com/Articles/1084801/Replace-malloc-free-with-a-fast-fixed-block-memory)** library
+
 
 ## Why Allocator and Memory
 This library is very useful when working with embedded systems where memory is limited and hence memory fragmentation can occur very easily.
