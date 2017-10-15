@@ -7,10 +7,9 @@ before_install:
 
 install:
   - sudo apt-get install -qq cppcheck g++-5 valgrind cmake
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 
 script:
-  - cppcheck src && cppcheck examples/allocator
-  - cd examples/allocator && mkdir build && cp CMakeLists.txt build && cd build && cmake CMakeLists.txt && make
+  - cppcheck src examples/allocator
+  - g++-5 -std=c++14 examples/allocator/AllocatorExample.cpp src/Allocator.cpp -o allocatorExample
   - valgrind --leak-check=full ./allocatorExample
-  - cd ../ && rm -r build && cd ../../
+  - rm allocatorExample
