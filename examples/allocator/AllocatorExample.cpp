@@ -106,8 +106,8 @@ int main(){
     cout << "Num Pool Blocks: " << allocator3.GetTotalPoolBlocks() << endl;                     // should be 1
     cout << "Avail Pool Blocks: " << allocator3.GetNumPoolBlocksAvail() << endl;                // should be 0
     cout << "Avail Total Blocks: " << allocator3.GetTotalBlocks() << endl;                      // should be 2
-    cout << "Is Pool member array2: " << allocator3.IsPoolBlock(array3) << endl;                // should be 1
-    cout << "Is Pool member anotherArray2: " << allocator3.IsPoolBlock(anotherArray3) << endl;  // should be 0
+    cout << "Is Pool member array3: " << allocator3.IsPoolBlock(array3) << endl;                // should be 1
+    cout << "Is Pool member anotherArray3: " << allocator3.IsPoolBlock(anotherArray3) << endl;  // should be 0
     std::cout << array3 << endl;
     std::cout << anotherArray3 << endl;
 
