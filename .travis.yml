@@ -20,4 +20,3 @@ script:
   - g++-5 -std=c++14 examples/memory/MemoryExample.cpp src/Allocator.cpp src/Memory.cpp -o memoryExample
   - valgrind --leak-check=full ./memoryExample
   - rm memoryExample
-

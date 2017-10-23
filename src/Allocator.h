@@ -16,7 +16,6 @@
 
 #include <cstdlib>
 #include <cstdint>
-#include <cstdio>
 
 class Allocator {
 private:
