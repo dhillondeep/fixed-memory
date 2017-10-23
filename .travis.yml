@@ -1,0 +1,23 @@
+language: cpp
+compiler: g++
+
+before_install:
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get install -qq cppcheck g++-5 valgrind cmake
+
+script:
+  - cppcheck src examples/allocator
+  - g++-5 -std=c++14 examples/allocator/AllocatorExample.cpp src/Allocator.cpp -o allocatorExample
+  - valgrind --leak-check=full ./allocatorExample
+  - rm allocatorExample
+  - g++-5 -std=c++14 examples/allocator/StaticAllocatorExample.cpp src/Allocator.cpp -o staticAllocatorExample
+  - valgrind --leak-check=full ./staticAllocatorExample
+  - rm staticAllocatorExample
+  - cppcheck src examples/memory
+  - g++-5 -std=c++14 examples/memory/MemoryExample.cpp src/Allocator.cpp src/Memory.cpp -o memoryExample
+  - valgrind --leak-check=full ./memoryExample
+  - rm memoryExample
+
